@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--lowBlack: rgba(0, 0, 0, 0.678);
+	--success: #51be56;
+	--warning: #ffc107;
+	--error: #ff3122;
+	--primary: #29b6f6;
+}
+
+.modalContainer {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.modalDialogWrapper {
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--lowBlack);
+}
+
+.modalDialog {
+	display: flex;
+	flex-direction: column;
+	margin: 15px 0;
+	padding: 15px 25px;
+	position: relative;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	color: var(--white);
+	text-shadow: 2px 1px var(--lowBlack);
+	border: 1px outset var(--primary);
+	border-left-width: 5px;
+	box-shadow: 0 4px 10px #0004, 0 2px 20px #0008;
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.1);
+	animation: fadeIn 0.75s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.modalDialog.success {
+	border: 5px outset var(--success);
+}
+.modalDialog.error {
+	border: 5px outset var(--error);
+}
+.modalDialog.warning {
+	border: 5px outset var(--warning);
+}
+
+.modalDialog--Title {
+	font-family: 'Roboto', sans-serif;
+	margin-top: 0;
+}
+.modalDialog--Content {
+	font-family: 'Roboto', sans-serif;
+	margin-top: 0;
+}
+
+.modalDialog--CloseBtnContainer {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	padding: 5px;
+	border-radius: 15px;
+	border: 2px solid var(--white);
+	background: var(--black);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modalDialog--CloseBtn {
+	border-radius: 15px;
+	background: var(--black);
+	color: var(--white);
+}
+
+.modalDialog--CloseBtn:hover {
+	cursor: pointer;
+}
